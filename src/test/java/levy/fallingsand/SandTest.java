@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SandTest {
 
     @Test
-    public void string(){
+    public void string() {
         //given
         Sand sand = new Sand();
         //when
@@ -16,16 +16,17 @@ class SandTest {
         assertEquals("000\n000\n000\n", actual);
     }
     @Test
-    public void put(){
+    public void put() {
         //given
         Sand sand = new Sand();
         //when
-        sand.put(1,0);
+        sand.put(1, 0);
         //then
         assertEquals("010\n000\n000\n", sand.toString());
     }
+
     @Test
-    public void fall(){
+    public void fall() {
         //given
         Sand sand = new Sand();
         sand.put(1,0);
@@ -36,21 +37,22 @@ class SandTest {
     }
 
     @Test
-    public void fallonGround(){
+    public void fallonGround() {
         //given
         Sand sand = new Sand();
-        sand.put(1,2);
+        sand.put(1, 2);
         //when
         sand.fall();
         //then
         assertEquals("000\n000\n010\n", sand.toString());
     }
+
     @Test
-    public void fallonOtherSand(){
+    public void fallonOtherSand() {
         //given
         Sand sand = new Sand();
-        sand.put(1,1);
-        sand.put(1,2);
+        sand.put(1, 1);
+        sand.put(1, 2);
         //when
         sand.fall();
         //then
