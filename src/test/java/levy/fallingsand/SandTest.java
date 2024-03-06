@@ -17,6 +17,7 @@ class SandTest {
     }
 
 
+
     @Test
     public void put() {
         //given
@@ -28,16 +29,18 @@ class SandTest {
     }
 
 
+
     @Test
     public void fall() {
         //given
         Sand sand = new Sand();
-        sand.put(1,0);
+        sand.put(1, 0);
         //when
         sand.fall();
         //then
         assertEquals("000\n010\n000\n", sand.toString());
     }
+
 
 
     @Test
@@ -50,6 +53,7 @@ class SandTest {
         //then
         assertEquals("000\n000\n010\n", sand.toString());
     }
+
 
 
     @Test
