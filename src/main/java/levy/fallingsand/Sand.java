@@ -24,8 +24,8 @@ package levy.fallingsand;
         }
 
         public void fall() {
-            for (int y = 2; y >= 0; y--) {
-                for (int x = 0; x < 3; x++) {
+            for (int y = field.length - 1; y >= 0; y--) {
+                for (int x = 0; x < field[y].length; x++) {
                     if (field[y][x] == 1 && y < 2 && field[y + 1][x] == 0) {
                         field[y + 1][x] = 1;
                         field[y][x] = 0;
