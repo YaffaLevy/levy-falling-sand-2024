@@ -15,6 +15,7 @@ class SandTest {
         //then
         assertEquals("000\n000\n000\n", actual);
     }
+
     @Test
     public void put() {
         //given
