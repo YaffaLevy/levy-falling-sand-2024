@@ -11,7 +11,7 @@ repositories {
 }
 
 checkstyle{
-    configFile= '.github/wokrflows/checkstyle.xml' as File
+    configFile= '.github/workflows/checkstyle.xml' as File
 }
 
 dependencies {
