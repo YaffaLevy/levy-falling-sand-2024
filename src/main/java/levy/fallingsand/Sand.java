@@ -12,6 +12,7 @@ public class Sand {
         field = new int[height][width];
         this.random = new Random();
     }
+
     public Sand(int width, int height, Random random) {
         field = new int[height][width];
         this.random = new Random();
@@ -61,6 +62,7 @@ public class Sand {
         }
 
     }
+
     public void randomSand(int n) {
         for (int i = 0; i < n; i++) {
             int x = random.nextInt(field[0].length);

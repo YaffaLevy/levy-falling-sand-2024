@@ -56,19 +56,19 @@ class SandTest {
     }
 
 
-
     @Test
     public void falltoTheRight() {
         //given
         Sand sand = new Sand(3, 3);
         sand.put(1, 1);
         sand.put(1, 2);
-        sand.put(0,2);
+        sand.put(0, 2);
         //when
         sand.fall();
         //then
         assertEquals("000\n000\n111\n", sand.toString());
     }
+
 
     @Test
     public void falltoTheLeft() {
@@ -76,16 +76,18 @@ class SandTest {
         Sand sand = new Sand(3, 3);
         sand.put(1, 1);
         sand.put(1, 2);
-        sand.put(2,2);
+        sand.put(2, 2);
         //when
         sand.fall();
         //then
         assertEquals("000\n000\n111\n", sand.toString());
     }
+
+
     @Test
     public void fallSimultaneously() {
         //given
-        Sand sand = new Sand(3 , 3);
+        Sand sand = new Sand(3, 3);
         sand.put(1, 0);
         sand.put(1, 1);
         //when
