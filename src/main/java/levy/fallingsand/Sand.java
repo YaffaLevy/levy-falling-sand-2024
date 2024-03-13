@@ -38,27 +38,41 @@ public class Sand {
     }
 
     public void fall() {
-            for (int y = field.length - 2; y >= 0; y--) {
-                for (int x = 0; x < field[y].length; x++) {
-                    if (field[y][x] == 1 && y < field.length - 1) {
-                        int direction = random.nextInt(3) - 1; // -1, 0, or 1
-                        if (field[y + 1][x + direction] == 0) {
-                            field[y + 1][x + direction] = 1;
-                            field[y][x] = 0;
-                        }
+        // moves all sand down one square
+        for (int y = field.length - 2; y >= 0; y--) {
+            for (int x = 0; x < field[y].length; x++) {
+                if (field[y][x] == 1) {
+                    if (field[y + 1][x] == 0) {
+                        // does the sand fall straight down?
+                        field[y][x] = 0;
+                        field[y + 1][x] = 1;
+                        continue;
+                    }
+                    boolean rightFirst = random.nextBoolean();
+                    int direction1 = rightFirst ? +1 : -1;
+                    int direction2 = rightFirst ? -1 : +1;
+
+                    if (field[y + 1][x + direction1] == 0) {
+                        field[y][x] = 0;
+                        field[y + 1][x + direction1] = 1;
+                    } else if (field[y + 1][x + direction2] == 0) {
+                        field[y][x] = 0;
+                        field[y + 1][x + direction2] = 1;
                     }
                 }
             }
-    }
-
-    public void randomSand(int n) {
-        for (int i = 0; i < n; i++) {
-            int x = random.nextInt(field[0].length);
-            int y = random.nextInt(field.length);
-            field[y][x] = 1;
         }
     }
-}
+
+
+            public void randomSand ( int n){
+                for (int i = 0; i < n; i++) {
+                    int x = random.nextInt(field[0].length);
+                    int y = random.nextInt(field.length);
+                    field[y][x] = 1;
+                }
+            }
+        }
 
 
 
