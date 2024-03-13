@@ -50,32 +50,6 @@ public class Sand {
                 }
             }
     }
-    /* for (int y = field.length - 2; y >= 0; y--) {
-            for (int x = 0; x < field[y].length; x++) {
-
-                // does the sand fall straight down
-                if (field[y][x] == 1 && y < 2 && field[y + 1][x] == 0) {
-                    field[y + 1][x] = 1;
-                    field[y][x] = 0;
-                }
-
-                // does the sand fall to the right?
-                if (field[y][x] == 1 && y < 2 && field[y + 1][x + 1] == 0) {
-                    field[y + 1][x + 1] = 1;
-                    field[y][x] = 0;
-                }
-
-                // does the sand fall to the left
-                if (field[y][x] == 1 && y < 2 && field[y + 1][x - 1] == 0) {
-                    field[y + 1][x - 1] = 1;
-                    field[y][x] = 0;
-                }
-            }
-        }
-
-    }
-
-     */
 
     public void randomSand(int n) {
         for (int i = 0; i < n; i++) {
