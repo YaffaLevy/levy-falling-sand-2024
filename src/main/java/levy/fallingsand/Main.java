@@ -5,7 +5,9 @@ import java.util.Scanner;
     public class Main {
 
         public static void main(String[] args) {
-            new SandFrame().setVisible(true);
+            //new SandFrame().setVisible(true);
+            SandFrame frame = new SandFrame();
+            frame.setVisible(true);
             Scanner scanner = new Scanner(System.in);
             Sand sand = new Sand(50, 10);
             sand.randomSand(50);
