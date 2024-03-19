@@ -15,6 +15,7 @@ public class Sand {
         field = new int[height][width];
         this.random = new Random();
     }
+
     public int getWidth() {
         return width;
     }
@@ -23,10 +24,6 @@ public class Sand {
         return height;
     }
 
-    public Sand(int width, int height, Random random) {
-        field = new int[height][width];
-        this.random = new Random();
-    }
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -62,21 +59,21 @@ public class Sand {
                     int direction1 = rightFirst ? +1 : -1;
                     int direction2 = rightFirst ? -1 : +1;
 
-                    // Handle left edge
+                    // left edge
                     if (x == 0) {
                         if (field[y + 1][x + direction1] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x + direction1] = 1;
                         }
                     }
-                    // Handle right edge
+                    // right edge
                     else if (x == field[y].length - 1) {
                         if (field[y + 1][x + direction2] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x + direction2] = 1;
                         }
                     }
-                    // Handle general case
+
                     else {
                         if (field[y + 1][x] == 0) {
                             field[y][x] = 0;
@@ -93,9 +90,6 @@ public class Sand {
             }
         }
     }
-
-
-
 
 
     public void randomSand(int n) {
