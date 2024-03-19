@@ -5,12 +5,22 @@ import java.util.Random;
 public class Sand {
 
     private final int[][] field;
-
+    private int width;
+    private int height;
     private final Random random;
 
     public Sand(int width, int height) {
+        this.width = width;
+        this.height = height;
         field = new int[height][width];
         this.random = new Random();
+    }
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Sand(int width, int height, Random random) {
@@ -52,12 +62,32 @@ public class Sand {
                     int direction1 = rightFirst ? +1 : -1;
                     int direction2 = rightFirst ? -1 : +1;
 
-                    if (field[y + 1][x + direction1] == 0) {
-                        field[y][x] = 0;
-                        field[y + 1][x + direction1] = 1;
-                    } else if (field[y + 1][x + direction2] == 0) {
-                        field[y][x] = 0;
-                        field[y + 1][x + direction2] = 1;
+                    // Handle left edge
+                    if (x == 0) {
+                        if (field[y + 1][x + direction1] == 0) {
+                            field[y][x] = 0;
+                            field[y + 1][x + direction1] = 1;
+                        }
+                    }
+                    // Handle right edge
+                    else if (x == field[y].length - 1) {
+                        if (field[y + 1][x + direction2] == 0) {
+                            field[y][x] = 0;
+                            field[y + 1][x + direction2] = 1;
+                        }
+                    }
+                    // Handle general case
+                    else {
+                        if (field[y + 1][x] == 0) {
+                            field[y][x] = 0;
+                            field[y + 1][x] = 1;
+                        } else if (field[y + 1][x + direction1] == 0) {
+                            field[y][x] = 0;
+                            field[y + 1][x + direction1] = 1;
+                        } else if (field[y + 1][x + direction2] == 0) {
+                            field[y][x] = 0;
+                            field[y + 1][x + direction2] = 1;
+                        }
                     }
                 }
             }
@@ -65,7 +95,10 @@ public class Sand {
     }
 
 
-            public void randomSand(int n) {
+
+
+
+    public void randomSand(int n) {
                 for (int i = 0; i < n; i++) {
                     int x = random.nextInt(field[0].length);
                     int y = random.nextInt(field.length);
