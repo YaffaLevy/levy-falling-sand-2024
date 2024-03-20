@@ -65,7 +65,7 @@ public class Sand {
                             field[y + 1][x] = 1;
                         }
                     }
-                    // right edge
+                    // Right edge
                     else if (x == field[y].length - 1) {
                         if (field[y + 1][x] == 0) {
                             field[y][x] = 0;
