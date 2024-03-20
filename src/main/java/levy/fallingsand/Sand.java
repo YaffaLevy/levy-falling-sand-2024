@@ -60,7 +60,7 @@ public class Sand {
 
                     // left edge
                     if (x == 0) {
-                        if (field[y + 1][x = 1] == 0) {
+                        if (field[y + 1][x + 1] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x + 1] = 1;
                         }
