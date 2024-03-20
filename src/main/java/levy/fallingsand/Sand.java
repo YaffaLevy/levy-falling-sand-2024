@@ -24,7 +24,6 @@ public class Sand {
         return height;
     }
 
-
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (int y = 0; y < field.length; y++) {
@@ -60,24 +59,19 @@ public class Sand {
                     int direction2 = rightFirst ? -1 : +1;
 
                     // left edge
-                    // left edge
                     if (x == 0) {
                         if (field[y + 1][x] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x] = 1;
                         }
                     }
-
-
                     // right edge
                     else if (x == field[y].length - 1) {
-                        if (field[y + 1][x] == 0) {  // Check if there's space below
+                        if (field[y + 1][x] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x] = 1;
                         }
-                    }
-
-                    else {
+                    } else {
                         if (field[y + 1][x] == 0) {
                             field[y][x] = 0;
                             field[y + 1][x] = 1;
@@ -95,14 +89,10 @@ public class Sand {
     }
 
     public void randomSand(int n) {
-                for (int i = 0; i < n; i++) {
-                    int x = random.nextInt(field[0].length);
-                    int y = random.nextInt(field.length);
-                    field[y][x] = 1;
-                }
-            }
+        for (int i = 0; i < n; i++) {
+            int x = random.nextInt(field[0].length);
+            int y = random.nextInt(field.length);
+            field[y][x] = 1;
         }
-
-
-
-
+    }
+}
