@@ -30,11 +30,6 @@ public class SandComponent extends JComponent {
             }
         }
     }
-
-    public void initializeGui() {
-        SandFrame frame = new SandFrame();
-        frame.setVisible(true);
-    }
 }
 
 
