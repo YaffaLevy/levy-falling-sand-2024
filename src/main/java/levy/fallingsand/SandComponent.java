@@ -1,6 +1,6 @@
 package levy.fallingsand;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.awt.*;
 
 public class SandComponent extends JComponent {
@@ -21,16 +21,21 @@ public class SandComponent extends JComponent {
         for (int y = 0; y < sand.getHeight(); y++) {
             for (int x = 0; x < sand.getWidth(); x++) {
                 if (sand.get(x, y) == 1) {
-
                     g.setColor(Color.DARK_GRAY);
                     g.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 } else {
-
                     g.setColor(Color.WHITE);
                     g.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 }
             }
         }
     }
+
+    public void initializeGUI() {
+        SandFrame frame = new SandFrame();
+        frame.add(this);
+        frame.setVisible(true);
+    }
 }
+
 
