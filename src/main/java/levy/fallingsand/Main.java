@@ -10,7 +10,7 @@ public class Main {
         sand.randomSand(50);
 
         SandComponent sandComponent = new SandComponent(sand);
-        sandComponent.initializeGUI();
+        sandComponent.initializeGui();
 
         while (true) {
             System.out.println(sand);
